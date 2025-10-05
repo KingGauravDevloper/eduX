@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+google-generativeai
+python-dotenv
+pyttsx3
+pypiwin32
+comtypes
+requests
+moviepy
