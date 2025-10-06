@@ -11,6 +11,7 @@ import pyttsx3
 from fastapi.concurrency import run_in_threadpool
 from moviepy.editor import ImageClip, AudioFileClip, concatenate_videoclips
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 
 
@@ -30,6 +31,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.mount("/videos", StaticFiles(directory="video_outputs"), name="videos")
 
 # Configure Google Gemini
 google_api_key = os.getenv("GOOGLE_API_KEY")
